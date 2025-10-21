@@ -14,7 +14,7 @@ d2 <- d |>
          age = as.numeric(age)) |> 
   mutate(l_sc = as.numeric(scale(length)),
          .by = c(SD, age)) |> 
-  mutate(life_stage = ifelse(age <= 2, "adult", "juvenile")) |> 
+  mutate(life_stage = ifelse(age <= 2, "juvenile", "adult")) |> 
   filter(age > 0 & age <= 6)
          
 ggplot(d2, aes(Year, l_sc,
